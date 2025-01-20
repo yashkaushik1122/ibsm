@@ -1,0 +1,84 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+function addMenuFunctionality() {
+    const menuIcon = document.querySelectorAll('.mb-header nav .menu');
+    const menuList = document.querySelectorAll('.mb-header .bottom__header');
+
+    menuIcon.forEach(icon => {
+        icon.addEventListener('click', () => {
+            menuList.forEach(list => {
+                list.classList.toggle("show");
+            });
+        });
+    });
+}
+
+// Call the function to add menu functionality
+addMenuFunctionality();
+
+
+
+function addDropdownFunctionality() {
+    const questions = document.querySelectorAll('.question');
+    let activeAccordion = null;
+
+    questions.forEach(question => {
+        const icon = question.querySelector('.icon'); 
+        const answer = question.parentElement.nextElementSibling;
+
+        question.addEventListener("click", () => {
+            if (activeAccordion && activeAccordion !== question) {
+                activeAccordion.querySelector('.icon').classList.remove('active'); 
+                activeAccordion.parentElement.nextElementSibling.style.maxHeight = null; 
+            }
+
+            if (icon.classList.contains('active')) {
+                icon.classList.remove('active'); 
+                answer.style.maxHeight = null; 
+            } else {
+                icon.classList.add('active'); 
+                answer.style.maxHeight = answer.scrollHeight + "px"; 
+                activeAccordion = question;
+            }
+        });
+    });
+}
+
+addDropdownFunctionality();
+
+
+function closePopupb() {
+    document.getElementById('contactpopu').style.display = 'none';
+}
+
+}
+/*
+     FILE ARCHIVED ON 06:09:22 May 25, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:15:00 Jan 10, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.542
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 10.564
+  LoadShardBlock: 71.366 (3)
+  PetaboxLoader3.datanode: 88.759 (4)
+  load_resource: 147.402
+  PetaboxLoader3.resolve: 75.614
+*/
